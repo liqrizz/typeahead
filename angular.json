@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "typeahead"
+  "defaultProject": "typeahead",
+  "cli": {
+    "analytics": false
+  }
 }

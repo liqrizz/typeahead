@@ -1,0 +1,74 @@
+.dropdown-container {
+  display: inline-block;
+  min-width: 220px;
+}
+
+.dropdown {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+}
+
+.overlay {
+  border: 1px solid #ccc;
+  margin-top: 9px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  display: block;
+}
+
+input {
+  outline: none;
+}
+
+ul li {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+ul li:hover {
+  background: whitesmoke;
+  cursor: pointer;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+span.arrow {
+  transform: rotate(90deg);
+  font-family: monospace;
+}
+
+span.arrow.active {
+  transform: rotate(
+      270deg
+  );
+}
+
+ul {
+  max-height: 200px;
+  overflow: auto;
+  margin-top: 15px !important;
+}
+
+:host ::ng-deep {
+  span.match {
+    background: #fff79a;
+  }
+}
