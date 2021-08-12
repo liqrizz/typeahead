@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.setServerData();
+    this.setServerData(AppComponent.serverData);
     this.initTypeAHeadListener();
   }
 
@@ -59,8 +59,8 @@ export class AppComponent implements OnInit, OnDestroy {
     );
   }
 
-  private setServerData(): void {
-    this.options$.next(AppComponent.serverData);
+  private setServerData(data: DropdownOption[]): void {
+    this.options$.next(data);
   }
 
   private initTypeAHeadListener(): void {
@@ -71,7 +71,7 @@ export class AppComponent implements OnInit, OnDestroy {
         distinctUntilChanged(),
         tap(keyword => this.searchValue = keyword),
         switchMap(this.getFilteredData$),
-        tap(filteredOption => this.options$.next(filteredOption))
+        tap(filteredOption => this.setServerData(filteredOption))
       )
       .subscribe();
   }
